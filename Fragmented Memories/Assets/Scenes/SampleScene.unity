@@ -6656,7 +6656,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151969685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 8.721, y: 0.26, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0.26, z: 0}
+>>>>>>> 0e059c7271e34c389b835df43656ae9c6c7e4651
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 269513981}
@@ -6681,7 +6685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a82acd36508a14d82bc62ce131dc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxFactor: 0.2
+  parallaxFactor: 0.5
 --- !u!1 &152360582
 GameObject:
   m_ObjectHideFlags: 0
@@ -9671,7 +9675,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.12e-43, y: -0.0000000015844881, z: 7.12e-43, w: 1.1381079e-17}
+  m_BoundingSphereOverride: {x: 9.12e-43, y: 1.01e-43, z: 2.3509887e-38, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -14286,36 +14290,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &944512010
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 944512011}
-  m_Layer: 0
-  m_Name: MAP1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &944512011
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944512010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.935919, y: -1.1157073, z: -40.321877}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948148358
 GameObject:
   m_ObjectHideFlags: 0
@@ -24138,13 +24112,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071571019}
-  m_LocalRotation: {x: -0, y: -0, z: 0.059451763, w: 0.99823123}
-  m_LocalPosition: {x: 4.462, y: -3.987, z: 0.53999996}
+  m_LocalRotation: {x: -0, y: -0, z: 0.5946363, w: 0.80399483}
+  m_LocalPosition: {x: 4.462, y: -3.987, z: 0.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361081944}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.8170004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 72.97301}
 --- !u!212 &2071571021
 SpriteRenderer:
   m_ObjectHideFlags: 0
