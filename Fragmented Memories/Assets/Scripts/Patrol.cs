@@ -64,23 +64,13 @@ namespace Fragmented
                 this.FadeStarted = true;
                 this.EnemyMusic.Play();
                 StartCoroutine(StartFade(this.EnemyMusic, 10f, 1f, 0f));
-                UpdateBehavior();
+                // UpdateBehavior();
             }
             else if (!PlayerIsWithinRange && this.FadeStarted)
             {
                 this.FadeStarted = false;
                 StartCoroutine(StartFade(this.EnemyMusic, 10f, 0f, 1f));
             }           
-        }
-
-        private void UpdateBehavior()
-        {
-            var ChaseScript = this.gameObject.GetComponent<Chase>();
-            var PatrolScript = this.gameObject.GetComponent<Patrol>();
-            
-            ChaseScript.enabled = true;
-            PatrolScript.enabled = false;
-            
         }
 
         IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume, float startVolume)
