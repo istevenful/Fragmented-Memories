@@ -12,8 +12,7 @@ using UnityEngine.AI;
 namespace Fragmented
 {
     public class Patrol : MonoBehaviour
-    {
-        [SerializeField] AudioSource EnemyMusic;       
+    {      
         [SerializeField] Transform[] Points;
         [SerializeField] float PatrolSpeed;
         [SerializeField] float PauseTime;
@@ -31,7 +30,6 @@ namespace Fragmented
         void Update()
         {
             Patroling();
-            CheckPlayerDistance();         
         }
 
         private void Patroling()
@@ -53,37 +51,6 @@ namespace Fragmented
                 CheckDirection();
                 MoveTowardsPoint();
             }
-        }
-
-        private void CheckPlayerDistance()
-        {            
-            // If the player is closing in, fade in with TargetVolume 1, else fade out with TargetVolume 0;
-            bool PlayerIsWithinRange = (this.MainCamera.transform.position.x > this.transform.position.x - 5f) && (this.MainCamera.transform.position.x < this.transform.position.x);
-            if (PlayerIsWithinRange && !this.FadeStarted)
-            {
-                this.FadeStarted = true;
-                this.EnemyMusic.Play();
-                StartCoroutine(StartFade(this.EnemyMusic, 10f, 1f, 0f));
-                // UpdateBehavior();
-            }
-            else if (!PlayerIsWithinRange && this.FadeStarted)
-            {
-                this.FadeStarted = false;
-                StartCoroutine(StartFade(this.EnemyMusic, 10f, 0f, 1f));
-            }           
-        }
-
-        IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume, float startVolume)
-        {
-            this.EnemyMusic.volume = startVolume;
-            float ElaspedTime = 0;
-            while (ElaspedTime < duration)
-            {               
-                audioSource.volume = Mathf.Lerp(startVolume, targetVolume, ElaspedTime / duration);
-                ElaspedTime += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
-            }
-            yield break;
         }
 
         IEnumerator PauseBeforeNextPoint()
