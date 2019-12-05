@@ -77,6 +77,8 @@ public class PlayerPlatformerController : PhysicsObject
 
     //public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
+    private float jumpWindow = 0.5f;
+    private bool canAirJump = true;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -123,15 +125,45 @@ public class PlayerPlatformerController : PhysicsObject
 
         this.prevHorizontialAxisInput = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && grounded)
+        this.jumpWindow -= Time.deltaTime;
+
+        // Still in air 
+        if(Input.GetButtonDown("Jump") && !grounded)
+        {
+            this.jumpWindow = 0.5f;
+
+            // Air jump
+            if(canAirJump)
+            {
+                velocity.y += jumpTakeOffSpeed;
+                canAirJump = false;
+            }
+        }
+
+        // Reset air jump
+        if(grounded)
+        {
+            canAirJump = true;
+        }
+
+        // Forgiven jump
+        if(grounded && this.jumpWindow > 0f)
         {
             velocity.y = jumpTakeOffSpeed;
         }
-        else if (Input.GetButtonUp("Jump"))
+        else
         {
-            if (velocity.y > 0)
+            // Normal jump
+            if (Input.GetButton("Jump") && grounded)
             {
-                velocity.y = velocity.y * 0.5f;
+                velocity.y = jumpTakeOffSpeed;
+            }
+            else if (Input.GetButtonUp("Jump"))
+            {
+                if (velocity.y > 0)
+                {
+                    velocity.y = velocity.y * 0.5f;
+                }
             }
         }
 
