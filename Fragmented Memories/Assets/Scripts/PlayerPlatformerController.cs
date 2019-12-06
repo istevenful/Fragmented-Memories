@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Player.Attack;
 using UnityEngine;
 
 public class PlayerPlatformerController : PhysicsObject
@@ -26,7 +27,7 @@ public class PlayerPlatformerController : PhysicsObject
     [SerializeField] private float jumpTakeOffSpeed = 7;
 
     // Jump forgiveness set to 0.5s
-    [SerializeField] private float jumpWindow = 0.5f;
+    [SerializeField] private float jumpWindow = 0.25f;
 
     // Air jump flag
     private bool canAirJump = true;
@@ -34,9 +35,14 @@ public class PlayerPlatformerController : PhysicsObject
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    // Attack box
+    // Attack
     [SerializeField] private GameObject attabox;
     private Vector3 flipVector = new Vector3(1.75f, 0, 0);
+    private IPlayerAttack normalAttack;
+    private float attackDuration = 0.5f;
+
+    // Health
+    private float health = 100f;
 
     // ADSR implemetation
     // Taken for Dr.Mccoy's class demo project
@@ -100,8 +106,28 @@ public class PlayerPlatformerController : PhysicsObject
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         this.prevHorizontialAxisInput = 0f;
+
+        // Add command for attack
+        this.gameObject.AddComponent<PlayerAttack>();
+        this.normalAttack = this.gameObject.GetComponent<PlayerAttack>();
+        this.attabox.SetActive(false);
     }
 
+    void Update()
+    {
+        // Call Update() from PhysicsObject
+        base.Update();
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //this.normalAttack.Attack(this.gameObject);
+            this.AttackDuration = 0.5f;
+        }
+
+        
+    }
+
+    // Called every Update()
     protected override void ComputeVelocity()
     {
         Vector2 move = Vector2.zero;
@@ -199,5 +225,14 @@ public class PlayerPlatformerController : PhysicsObject
             targetVelocity = move * this.ADSREnvelope() * this.MaxSpeed * 0.75f;
         }
 
+    }
+
+    // Collision with enemy
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            // Decreament health by enemy attack value
+        }
     }
 }
