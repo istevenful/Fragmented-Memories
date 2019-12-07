@@ -29,7 +29,6 @@ public class Chase : MonoBehaviour
 
     private bool UpdatingPath = false;
 
-
     public void Chasing()
     {
         if (!this.UpdatingPath)

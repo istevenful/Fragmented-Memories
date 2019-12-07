@@ -3,31 +3,24 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] float ScanRange = 7f;
+    [SerializeField] float ScanRange = 10f;
+    [SerializeField] float PauseChaseTime = 3.0f;
+    [SerializeField] bool PauseChaseAfterAttacking = false;
 
     private Chase Chasing;
     private Patrol Patroling;
-    private Fly Flying;
     private GameObject Target;
     
-    private float XAxisModifier = 1000f;
     private float Health = 100f;
+    private bool ChasePaused = false;
     // private Attack Attacking;
     // Use this for initialization
     void Start()
     {
-        if (this.CompareTag("E1"))
-        {
-            this.Patroling = this.gameObject.GetComponent<Patrol>();
-        }
-        else if (this.CompareTag("F1"))
-        {
-            this.Flying = this.gameObject.GetComponent<Fly>();
-        }
+        this.Patroling = this.gameObject.GetComponent<Patrol>();
         this.Chasing = this.gameObject.GetComponent<Chase>();
         this.Target = GameObject.FindGameObjectWithTag("Player");
         // this.Attacking = this.gameObject.GetComponent<Attack>();
-
     }
 
     // Update is called once per frame
@@ -37,8 +30,12 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("Attacking");
             // this.Attacking.Attacking();
+            if (this.PauseChaseAfterAttacking)
+            {
+                StartCoroutine(PauseChase());
+            }
         }
-        else if (TargetIsInNearby())
+        else if (TargetIsWithinScanRange() && !this.ChasePaused)
         {
             Debug.Log("Chasing");
             this.Chasing.Chasing();
@@ -46,14 +43,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
             // Debug.Log("Patroling");
-            if (this.CompareTag("E1"))
-            {
-                this.Patroling.Patroling();
-            }
-            else if (this.CompareTag("F1"))
-            {
-                this.Flying.Flying();
-            }
+            this.Patroling.Patroling();
         }
     }
 
@@ -62,9 +52,16 @@ public class EnemyAI : MonoBehaviour
         return Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position) < 1f;
     }
 
-    private bool TargetIsInNearby()
+    private bool TargetIsWithinScanRange()
     {
-        return Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position) < 5f;
+        return Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position) < this.ScanRange;
+    }
+
+    IEnumerator PauseChase()
+    {
+        this.ChasePaused = true;
+        yield return new WaitForSeconds(this.PauseChaseTime);
+        this.ChasePaused = false;
     }
 
     public bool IsDead()

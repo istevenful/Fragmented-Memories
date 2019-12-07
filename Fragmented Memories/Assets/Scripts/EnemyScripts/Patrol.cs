@@ -26,7 +26,6 @@ public class Patrol : MonoBehaviour
             return;
         }
         // If pause is wanted between Points, PauseBeforeNextPoint is called and the next point is updated.
-        Debug.Log(Vector2.Distance(this.Points[this.DestinationPoint].position, this.gameObject.transform.position));
         bool PointReached = Vector2.Distance(this.Points[this.DestinationPoint].position, this.gameObject.transform.position) < 1f;
         if (PointReached && this.MoveToNextPoint)
         {
