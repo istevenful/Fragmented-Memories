@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public int health;
-    public int NumberofHeart;
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite EmptyHeart;
+    public int NumberofHealth;
+    public Image[] flowers;
+    public Sprite AliveFlower;
+    public Sprite DeadFlower;
 
 
     public static bool PlayerisDead = false;
@@ -18,29 +18,29 @@ public class Health : MonoBehaviour
     [SerializeField] private int MenuIndex;
     void Update()
     {
-        if(health > NumberofHeart)
+        if(health > NumberofHealth)
         {
-            health = NumberofHeart;
+            health = NumberofHealth;
         }
-        for (int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < flowers.Length; i++)
         {
             //decideds which heart is full or empty
             if (i < health)
             {
-                hearts[i].sprite = fullHeart;
+                flowers[i].sprite = AliveFlower;
             }
             else
             {
-                hearts[i].sprite = EmptyHeart;
+                flowers[i].sprite = DeadFlower;
             }
             //show how much hearts to display. (Player can gain more hearts in some way).
-            if (i < NumberofHeart)
+            if (i < NumberofHealth)
             {
-                hearts[i].enabled = true;
+                flowers[i].enabled = true;
             }
             else
             {
-                hearts[i].enabled = false;
+                flowers[i].enabled = false;
             }
         }
 
