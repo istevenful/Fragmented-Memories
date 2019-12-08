@@ -985,7 +985,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1009,7 +1009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28983996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -30.7, y: 1.8753111, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8637,6 +8637,7 @@ GameObject:
   - component: {fileID: 128998127}
   - component: {fileID: 128998129}
   - component: {fileID: 128998128}
+  - component: {fileID: 128998130}
   m_Layer: 5
   m_Name: Rose (1)
   m_TagString: Untagged
@@ -8699,6 +8700,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128998126}
   m_CullTransparentMesh: 0
+--- !u!95 &128998130
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128998126}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5358164dced77e44a8f6e82fdb15c17e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &132277262
 GameObject:
   m_ObjectHideFlags: 0
@@ -10695,7 +10715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208101592}
   m_LocalRotation: {x: -0, y: -0, z: 0.06704112, w: 0.9977502}
-  m_LocalPosition: {x: 25.51005, y: -10.54, z: -96.67}
+  m_LocalPosition: {x: 10.160049, y: -10.54, z: -96.67}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -12697,7 +12717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287517571}
   m_LocalRotation: {x: -0, y: -0, z: 0.019342478, w: 0.99981296}
-  m_LocalPosition: {x: 29.86003, y: -8.9, z: -81.36}
+  m_LocalPosition: {x: 14.510029, y: -8.9, z: -81.36}
   m_LocalScale: {x: 2.6665194, y: 5.100821, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -15552,7 +15572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430715617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.551959, y: 0, z: 0}
+  m_LocalPosition: {x: -5.981759, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 394859367}
@@ -17644,7 +17664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501227588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.36003, y: -6.05, z: -71.37}
+  m_LocalPosition: {x: 21.01003, y: -6.05, z: -71.37}
   m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -21098,6 +21118,7 @@ GameObject:
   - component: {fileID: 695692092}
   - component: {fileID: 695692094}
   - component: {fileID: 695692093}
+  - component: {fileID: 695692095}
   m_Layer: 5
   m_Name: Rose
   m_TagString: Untagged
@@ -21160,6 +21181,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695692091}
   m_CullTransparentMesh: 0
+--- !u!95 &695692095
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695692091}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5358164dced77e44a8f6e82fdb15c17e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &697925077
 GameObject:
   m_ObjectHideFlags: 0
@@ -23075,7 +23115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799151550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.064991, y: 0.26, z: 0}
+  m_LocalPosition: {x: 16.994991, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1953681806}
@@ -23127,7 +23167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800801713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.310053, y: -6.6, z: -78.17}
+  m_LocalPosition: {x: 6.9600525, y: -6.6, z: -78.17}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -29322,6 +29362,7 @@ GameObject:
   - component: {fileID: 1135582603}
   - component: {fileID: 1135582605}
   - component: {fileID: 1135582604}
+  - component: {fileID: 1135582606}
   m_Layer: 5
   m_Name: Rose (2)
   m_TagString: Untagged
@@ -29384,6 +29425,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135582602}
   m_CullTransparentMesh: 0
+--- !u!95 &1135582606
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135582602}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5358164dced77e44a8f6e82fdb15c17e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1138990526
 GameObject:
   m_ObjectHideFlags: 0
@@ -30708,7 +30768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212123626}
   m_LocalRotation: {x: -0, y: -0, z: 0.019342478, w: 0.99981296}
-  m_LocalPosition: {x: 16.490046, y: -6.77, z: -74.86}
+  m_LocalPosition: {x: 1.1400452, y: -6.77, z: -74.86}
   m_LocalScale: {x: 5.531883, y: 5.10082, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -35649,6 +35709,7 @@ GameObject:
   - component: {fileID: 1474278649}
   - component: {fileID: 1474278651}
   - component: {fileID: 1474278650}
+  - component: {fileID: 1474278652}
   m_Layer: 5
   m_Name: Rose (3)
   m_TagString: Untagged
@@ -35711,6 +35772,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474278648}
   m_CullTransparentMesh: 0
+--- !u!95 &1474278652
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474278648}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5358164dced77e44a8f6e82fdb15c17e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1477679132
 GameObject:
   m_ObjectHideFlags: 0
@@ -42597,7 +42677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796144972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000028803944, y: 0, z: 49.6}
+  m_LocalPosition: {x: -3.0700004, y: 0, z: 49.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 939101758}
@@ -44824,7 +44904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931549872}
   m_LocalRotation: {x: -0, y: -0, z: 0.06704112, w: 0.9977502}
-  m_LocalPosition: {x: 24.76005, y: -7, z: -72.8}
+  m_LocalPosition: {x: 9.410049, y: -7, z: -72.8}
   m_LocalScale: {x: 3.9503567, y: 5.10082, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -48392,7 +48472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1305999224317908, guid: 38064353844f0324f9adfb57f1bcd262, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4327433996531846, guid: 38064353844f0324f9adfb57f1bcd262, type: 3}
       propertyPath: m_LocalPosition.x
