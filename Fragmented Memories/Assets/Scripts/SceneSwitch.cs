@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    [SerializeField] private int SceneNumber;
+    [SerializeField] private int LoadingSceneNumber;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneNumber);
+            SceneManager.LoadScene(LoadingSceneNumber);
         }
     }
 }
