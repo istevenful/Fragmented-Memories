@@ -47,6 +47,12 @@ public class PlayerPlatformerController : PhysicsObject
     [SerializeField] private float damageProtection= 1.0f;
     private float damageProtectionTimer = 0.0f;
 
+
+    // Ground check
+    [SerializeField] private Transform groundCheck;
+    float groundRadius = 0.2f;
+    [SerializeField] private LayerMask whatIsGround;
+
     // ADSR implemetation
     // Taken for Dr.Mccoy's class demo project
     private void ResetTimers()
@@ -122,7 +128,8 @@ public class PlayerPlatformerController : PhysicsObject
         // Call Update() from PhysicsObject
         base.Update();
 
-
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        Debug.Log(grounded);
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && !this.isDead)
         {
