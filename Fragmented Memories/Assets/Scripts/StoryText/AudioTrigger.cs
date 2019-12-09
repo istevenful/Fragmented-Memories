@@ -21,7 +21,8 @@ public class AudioTrigger : MonoBehaviour
     {
         this.audioSource = GetComponent<AudioSource>();
         this.Player = GameObject.FindGameObjectWithTag("Player");
-        this.E1 = GameObject.FindGameObjectWithTag("Enemy");
+        
+        // this.E1 = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -35,16 +36,28 @@ public class AudioTrigger : MonoBehaviour
                 StartCoroutine(StartFade(this.FadeDuration, this.StartVolume, this.TargetVolume));
             }      
         }
-        if (this.E1.GetComponent<EnemyAI>().IsDead() && !AudioStopped)
+        else
         {
-            AudioStopped = true;
-            StartFade(7f, 0f, this.Volume);
+            if (this.audioSource.isPlaying)
+            {
+                this.audioSource.loop = false;
+                StartFade(7f, this.Volume, 0f);
+            }
+        }
+        if (this.E1 != null)
+        {
+            if (this.E1.GetComponent<EnemyAI>().IsDead() && !AudioStopped)
+            {
+                AudioStopped = true;
+                StartFade(7f, this.Volume, 0f);
+            }
+
         }
     }
 
     private bool TargetIsInRange()
     {
-        // Debug.Log(Vector2.Distance(this.audioSource.transform.position, this.Player.transform.position));
+        Debug.Log(Vector2.Distance(this.audioSource.transform.position, this.Player.transform.position));
         return Vector2.Distance(this.audioSource.transform.position, this.Player.transform.position) < this.Range;
     }
 

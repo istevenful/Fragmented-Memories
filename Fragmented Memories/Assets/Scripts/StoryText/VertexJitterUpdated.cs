@@ -7,8 +7,8 @@ namespace TMPro.Examples
 
     public class VertexJitterUpdated : MonoBehaviour
     {
-        [SerializeField] int StartIndex = 0;
-        [SerializeField] int EndEndex = 0;
+        [SerializeField] int StartIndex;
+        [SerializeField] int EndIndex;
         public float AngleMultiplier = 1.0f;
         public float SpeedMultiplier = 1.0f;
         public float CurveScale = 1.0f;
@@ -105,7 +105,7 @@ namespace TMPro.Examples
                 }
 
 
-                for (int i = this.StartIndex; i < this.EndEndex; i++)
+                for (int i = this.StartIndex; i < this.EndIndex; i++)
                 {
                     TMP_CharacterInfo charInfo = textInfo.characterInfo[i];
 

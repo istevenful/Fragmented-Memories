@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vignette : MonoBehaviour
+public class CustomVignette : MonoBehaviour
 {
     private GameObject MainCamera;
 

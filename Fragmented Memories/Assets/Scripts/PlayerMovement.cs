@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpWindow = 0.25f;
 
     // Air jump flag
-    private bool canAirJump = true;
+    private bool canAirJump = false;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -241,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
         // Reset air jump
         if (grounded)
         {
-            canAirJump = true;
+            // canAirJump = true;
         }
 
         // Forgiving jump
