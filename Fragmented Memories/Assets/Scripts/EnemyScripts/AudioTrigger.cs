@@ -21,7 +21,7 @@ public class AudioTrigger : MonoBehaviour
     {
         this.audioSource = GetComponent<AudioSource>();
         this.Player = GameObject.FindGameObjectWithTag("Player");
-        this.E1 = GameObject.FindGameObjectWithTag("E1");
+        this.E1 = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     // Update is called once per frame
