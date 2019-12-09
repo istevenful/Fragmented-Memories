@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        Debug.Log("RESUME");
         //turn off the Main menu UI.
         PauseMenuUI.SetActive(false);
         //completely freeze the game.
