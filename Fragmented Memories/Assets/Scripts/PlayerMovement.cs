@@ -140,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1f);
         this.attabox.SetActive(false);
         this.animator.SetBool("Attack", false);
+        this.GetComponent<AudioSource>().enabled = false;
     }
     private void FixedUpdate()
     {
@@ -153,9 +154,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (this.AttackDuration > 0 && numAttack == 0)
         {
+            
             numAttack = 1;
             this.attabox.SetActive(true);
             this.animator.SetBool("Attack", true);
+            this.GetComponent<AudioSource>().enabled = true;
+            
 
         }
         else
@@ -299,7 +303,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("collision happen");
          var R = Random.Range(0, 3);
-        if (collision.gameObject.tag == "Enemy" && this.damageProtectionTimer < 0.0f && collision.gameObject != null)
+        if (collision.gameObject.tag == "Enemy" && this.damageProtectionTimer < 0.0f && collision.gameObject != null && R == 1)
         {
             GameObject Enemy = collision.gameObject;
             Animator anim = Enemy.GetComponentInChildren<Animator>();
