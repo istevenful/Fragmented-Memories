@@ -44591,7 +44591,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000005722046, y: -0.17005429}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -44602,7 +44602,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.5770483, y: 1.3401082}
   m_EdgeRadius: 0
 --- !u!4 &1013263412
 Transform:
@@ -116621,11 +116621,11 @@ GameObject:
   - component: {fileID: 2087075292}
   - component: {fileID: 2087075291}
   - component: {fileID: 2087075290}
-  - component: {fileID: 2087075289}
   - component: {fileID: 2087075288}
   - component: {fileID: 2087075287}
   - component: {fileID: 2087075286}
   - component: {fileID: 2087075295}
+  - component: {fileID: 2087075289}
   m_Layer: 8
   m_Name: BolchieBat
   m_TagString: Player
@@ -116763,7 +116763,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   MaxSpeed: 6
-  jumpTakeOffSpeed: 350
+  jumpTakeOffSpeed: 400
   jumpWindow: 0.25
   attabox: {fileID: 1013263409}
   damageProtection: 1
@@ -116794,8 +116794,8 @@ MonoBehaviour:
   DeadFlower: {fileID: 21300000, guid: cf83c0284a0e2a243928449402b1494f, type: 3}
   GameOverMenuUI: {fileID: 1880112980}
   MenuIndex: 0
---- !u!58 &2087075289
-CircleCollider2D:
+--- !u!70 &2087075289
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -116807,9 +116807,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.52, y: -2.8}
-  serializedVersion: 2
-  m_Radius: 0.46
+  m_Offset: {x: -0.3268178, y: 0}
+  m_Size: {x: 2.4127705, y: 6.91}
+  m_Direction: 0
 --- !u!61 &2087075290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -116823,7 +116823,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.38636947, y: -0.046822667}
+  m_Offset: {x: -0.27743143, y: -0.046822548}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -116834,7 +116834,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.421161, y: 6.6816015}
+  m_Size: {x: 3.1139631, y: 6.6816015}
   m_EdgeRadius: 0
 --- !u!50 &2087075291
 Rigidbody2D:

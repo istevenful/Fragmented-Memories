@@ -59434,7 +59434,7 @@ PrefabInstance:
     - target: {fileID: 1331054892124478248, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
       propertyPath: jumpTakeOffSpeed
-      value: 350
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1331054892124478248, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
@@ -59454,17 +59454,17 @@ PrefabInstance:
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.38636947
+      value: -0.3046683
       objectReference: {fileID: 0}
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
       propertyPath: m_Size.x
-      value: 4.421161
+      value: 2.896077
       objectReference: {fileID: 0}
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.046822667
+      value: -0.046822548
       objectReference: {fileID: 0}
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
@@ -59533,7 +59533,28 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4103365130568474605, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07306591
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103365130568474605, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.916645
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103365130568474605, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1508137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103365130568474605, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3016274
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 58120836619034036, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667, type: 3}
 --- !u!4 &1632408445 stripped
 Transform:
@@ -68249,6 +68270,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &2103484816
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103484814}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.36765575, y: 0}
+  m_Size: {x: 2.3310819, y: 6.91}
+  m_Direction: 0
 --- !u!1 &2103977301
 GameObject:
   m_ObjectHideFlags: 0
