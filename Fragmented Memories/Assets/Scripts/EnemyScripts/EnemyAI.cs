@@ -21,6 +21,8 @@ public class EnemyAI : MonoBehaviour
     private float GroundRadius = 0.2f;
     private bool Grounded = false;
 
+    [SerializeField] bool FinalScene = false;
+
     private float Health = 100f;
     private bool ChasePaused = true;
     // private Attack Attacking;
@@ -40,7 +42,11 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (TargetIsInRange())
+        if (this.FinalScene)
+        {
+            StopMoving();
+        }
+        else if (TargetIsInRange())
         {
             // Debug.Log("Attacking");
             StopMoving();
