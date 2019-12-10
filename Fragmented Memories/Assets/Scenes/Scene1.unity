@@ -10264,13 +10264,11 @@ PolygonCollider2D:
       - {x: -26.568947, y: -2.3013115}
       - {x: -2.348071, y: -1.6793814}
       - {x: 27.367325, y: -1.6730156}
-      - {x: 28.80271, y: -0.50927687}
-      - {x: 29.989847, y: 1.9023736}
-      - {x: 29.644306, y: 8.588146}
-      - {x: 30.419888, y: 11.057519}
-      - {x: 28.23762, y: 7.814323}
-      - {x: 27.456133, y: 7.780506}
-      - {x: 27.454803, y: 1.1712245}
+      - {x: 26.58308, y: -0.43141365}
+      - {x: 26.693495, y: -0.23579216}
+      - {x: 26.767433, y: 0.06611967}
+      - {x: 27.295122, y: 0.4892912}
+      - {x: 27.337626, y: 0.7609978}
       - {x: 25.511187, y: 1.3885633}
       - {x: 18.35852, y: 0.7443714}
       - {x: 15.958763, y: 0.5786693}
@@ -15719,7 +15717,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 2.3125305}
+  m_BoundingSphereOverride: {x: 1, y: 1, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -50871,7 +50869,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 6.7e-43, y: 3.722929, z: 6.7e-43, w: 3.07e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
