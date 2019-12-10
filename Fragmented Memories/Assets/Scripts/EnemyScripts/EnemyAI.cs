@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform GroundCheck;
     [SerializeField] LayerMask WhatIsGround;
     [SerializeField] float ScanRange = 5f;
+    [SerializeField] GameObject AttackBox;
 
     private Animator animator;
     private Rigidbody2D rigidbody2D;
@@ -20,11 +21,13 @@ public class EnemyAI : MonoBehaviour
 
     private float GroundRadius = 0.2f;
     private bool Grounded = false;
+    private Vector3 flipVector = new Vector3(1.5f, 0, 0);
 
     [SerializeField] bool FinalScene = false;
 
     private float Health = 100f;
-    private bool ChasePaused = true;
+
+    private float PauseAfterAttacking = 0f;
     // private Attack Attacking;
     // Use this for initialization
     void Start()
@@ -36,42 +39,48 @@ public class EnemyAI : MonoBehaviour
         this.Patroling = this.gameObject.GetComponent<Patrol>();
         this.Chasing = this.gameObject.GetComponent<Chase>();
         this.Target = GameObject.FindGameObjectWithTag("Player");
-        // this.Attacking = this.gameObject.GetComponent<Attack>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        this.AttackBox.SetActive(false);
         if (this.FinalScene)
         {
             StopMoving();
+            this.animator.SetBool("Ground", false);
         }
         else if (TargetIsInRange())
         {
-            // Debug.Log("Attacking");
-            StopMoving();
-            // this.Attacking.Attacking();
+            if (this.PauseAfterAttacking < 2f)
+            {
+                this.PauseAfterAttacking += Time.deltaTime;
+                StopMoving();
+                StopAttacking();
+            }
+            else
+            {
+                this.AttackBox.SetActive(true);
+                StopMoving();
+                Attacking();
+                this.PauseAfterAttacking = 0f;
+            }
         }
         else if (TargetIsWithinScanRange())
         {
-            // Debug.Log("Chasing");
-            this.ChasePaused = false;
+            this.Chasing.Chasing();
         }
-        else if (this.ChasePaused)
+        else
         {
             // Debug.Log("Patroling");
             this.Patroling.Patroling();
-        }
-        else if (!this.ChasePaused)
-        {
-            this.Chasing.Chasing();
         }
     }
 
     private bool TargetIsInRange()
     {
         // Debug.Log(Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position));
-        return Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position) < 3f;
+        return Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position) < 1f;
     }
 
     private bool TargetIsWithinScanRange()
@@ -97,7 +106,7 @@ public class EnemyAI : MonoBehaviour
         this.animator.SetBool("Ground", this.Grounded);
         // Set the agent to go to the currently selected destination.
         float Step = this.PatrolSpeed * Time.deltaTime;
-        var Destination = new Vector2(destinationPoint, 0f);
+        var Destination = new Vector2(destinationPoint, this.GroundCheck.position.y);
         this.gameObject.transform.position = Vector2.MoveTowards(transform.position, Destination, Step);
         this.animator.SetFloat("vSpeed", this.rigidbody2D.velocity.y);
         this.animator.SetFloat("Speed", Mathf.Abs(this.PatrolSpeed));
@@ -124,6 +133,17 @@ public class EnemyAI : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
+    }
 
+    private void Attacking()
+    {
+        Animator anim = this.gameObject.GetComponent<Animator>();
+        anim.SetBool("Attack", true);
+    }
+
+    private void StopAttacking()
+    {
+        Animator anim = this.gameObject.GetComponent<Animator>();
+        anim.SetBool("Attack", false);
     }
 }

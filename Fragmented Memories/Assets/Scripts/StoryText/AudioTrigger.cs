@@ -11,7 +11,6 @@ public class AudioTrigger : MonoBehaviour
 
     private AudioSource audioSource;
     private GameObject Player;
-    private GameObject E1;
 
     private bool AudioStopped = false;
     private float ElapsedTime = 0.0f;
@@ -21,37 +20,24 @@ public class AudioTrigger : MonoBehaviour
     {
         this.audioSource = GetComponent<AudioSource>();
         this.Player = GameObject.FindGameObjectWithTag("Player");
-        
-        // this.E1 = GameObject.FindGameObjectWithTag("Enemy");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (TargetIsInRange())
+        if (TargetIsInRange() && !this.audioSource.isPlaying)
         {
-            if (!this.audioSource.isPlaying)
-            {
-                this.audioSource.Play();
-                StartCoroutine(StartFade(this.FadeDuration, this.StartVolume, this.TargetVolume));
-            }      
-        }
-        else
-        {
-            if (this.audioSource.isPlaying)
-            {
-                this.audioSource.loop = false;
-                this.audioSource.Stop();
-            }
-        }
-        if (this.E1 != null)
-        {
-            if (this.E1.GetComponent<EnemyAI>().IsDead() && !AudioStopped)
-            {
-                AudioStopped = true;
-                StartFade(7f, this.Volume, 0f);
-            }
 
+            this.audioSource.Play();
+            StartCoroutine(StartFade(this.FadeDuration, this.StartVolume, this.TargetVolume));
+
+        }
+        else if (this.audioSource.isPlaying && !this.AudioStopped && !this.audioSource.playOnAwake)
+        {
+            this.audioSource.loop = false;
+            this.AudioStopped = true;
+            StartFade(this.FadeDuration, this.Volume, 0f);
         }
     }
 

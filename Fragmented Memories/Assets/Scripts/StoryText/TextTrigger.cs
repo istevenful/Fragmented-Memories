@@ -23,6 +23,9 @@ namespace TMPro
         [SerializeField] float EnlargeTime = 0f;
         [SerializeField] float EnlargeSize = 0f;
 
+        [SerializeField] float ShrinkTime = 0f;
+        [SerializeField] float ShrinkSize = 0f;
+
         [SerializeField] GameObject StopTrigger;
         private bool StartFollowing = false;
 
@@ -67,6 +70,10 @@ namespace TMPro
                     if (EnlargeTime > 0f)
                     {
                         StartCoroutine(Enlarge());
+                    }
+                    if (this.ShrinkTime > 0f)
+                    {
+                        StartCoroutine(Shrink());
                     }
 
                 }
@@ -132,6 +139,19 @@ namespace TMPro
             {
                 this.TimePassed += Time.deltaTime;
                 this.StoryText.fontSize = Mathf.Lerp(OriginalSize, OriginalSize + this.EnlargeSize, this.TimePassed / this.EnlargeTime);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        private IEnumerator Shrink()
+        {
+            this.TimePassed = 0f;
+            TextMeshPro text = GetComponent<TextMeshPro>();
+            float OriginalSize = text.fontSize;
+            while (this.TimePassed < this.EnlargeTime)
+            {
+                this.TimePassed += Time.deltaTime;
+                this.StoryText.fontSize = Mathf.Lerp(OriginalSize, OriginalSize - this.EnlargeSize, this.TimePassed / this.EnlargeTime);
                 yield return new WaitForEndOfFrame();
             }
         }
