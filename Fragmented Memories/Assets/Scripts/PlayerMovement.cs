@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject attabox;
     private Vector3 flipVector = new Vector3(1.5f, 0, 0);
     //private IPlayerAttack normalAttack;
-    private float playerAttackDuration = 0.0f;
+    private float attackDuration = 0.0f;
 
     // Health
     private bool isDead = false;
@@ -53,7 +53,8 @@ public class PlayerMovement : MonoBehaviour
     float groundRadius = 0.2f;
     private bool grounded;
     public LayerMask whatIsGround;
-
+    private int numAttack = 0;
+    private float delay = 0;
     // ADSR implemetation
     // Taken for Dr.Mccoy's class demo project
     private void ResetTimers()
@@ -64,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
         this.ReleaseTimer = 0.0f;
     }
 
-    // TODO: Issue with release timer causes player to stop moving at random points
     float ADSREnvelope()
     {
         float velocity = 0.0f;
@@ -93,8 +93,7 @@ public class PlayerMovement : MonoBehaviour
             this.SustainTimer += Time.deltaTime;
             if (this.SustainTimer > this.SustainDuration)
             {
-            
-                // this.CurrentPhase = Phase.Release;
+                this.CurrentPhase = Phase.Release;
             }
         }
         else if (Phase.Release == this.CurrentPhase)
@@ -125,10 +124,9 @@ public class PlayerMovement : MonoBehaviour
         this.attabox.SetActive(false);
 
         this.animator.SetBool("Dead", isDead);
-        this.playerAttackDuration = 0f;
+        this.attackDuration = 0f;
         this.grounded = false;
         this.animator.SetBool("Attack", false);
-        this.canAirJump = false;
     }
 
     private void Update()
@@ -137,53 +135,41 @@ public class PlayerMovement : MonoBehaviour
         ComputeVelocity();
     }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        this.attabox.SetActive(false);
+        this.animator.SetBool("Attack", false);
+        this.GetComponent<AudioSource>().enabled = false;
+    }
     private void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && !this.isDead)
         {
-            //this.normalAttack.Attack(this.gameObject);
-            this.playerAttackDuration = 0.25f;
-        }
+            Debug.Log(delay);
 
-        if (this.playerAttackDuration > 0)
-        {
-            this.attabox.SetActive(true);
-            this.animator.SetBool("Attack", true);
-
-            var contacts = new Collider2D[32];
-            var hitSomething = false;
-
-            this.attabox.gameObject.GetComponent<BoxCollider2D>().GetContacts(contacts);
-
-            foreach (var col in contacts)
+            if (delay == 0)
             {
-                if (col != null && col.gameObject.tag == "Enemy")
-                {
-                    // Deal damage to enemy
-                    Debug.Log("Hit Enemey");
-
-                    col.GetComponent<EnemyHealth>().health--;
-
-                    hitSomething = true;
-                    this.attabox.SetActive(false);
-                    break;
-                }
-            }
-
-            if (hitSomething)
-            {
-                this.playerAttackDuration = 0;
+                delay += Time.deltaTime;
+                numAttack = 1;
+                this.attabox.SetActive(true);
+                this.animator.SetBool("Attack", true);
+                this.GetComponent<AudioSource>().enabled = true;
+                StartCoroutine(Wait());
+                numAttack = 0;
             }
         }
-        else
-        {
-            this.attabox.SetActive(false);
-            this.animator.SetBool("Attack", false);
-        }
 
-        this.playerAttackDuration -= Time.deltaTime;
+        if (delay != 0 && delay < 2)
+        {
+            delay += Time.deltaTime;
+        }
+        else if (delay >= 2)
+        {
+            delay = 0;
+        }
         this.damageProtectionTimer -= Time.deltaTime;
     }
 

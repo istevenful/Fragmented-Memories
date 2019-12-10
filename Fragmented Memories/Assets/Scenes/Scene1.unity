@@ -19712,7 +19712,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SustainDuration: 5
+  SustainDuration: 100
   Sustain:
     serializedVersion: 2
     m_Curve:
