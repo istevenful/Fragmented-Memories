@@ -219,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
         this.jumpWindow -= Time.deltaTime;
 
         // Still in air 
-        if (Input.GetButtonDown("Jump") && !grounded && !this.isDead)
+        /*if (Input.GetButtonDown("Jump") && !grounded && !this.isDead)
         {
             this.jumpWindow = 0.5f;
 
@@ -239,13 +239,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Forgiving jump
-        if (grounded && this.jumpWindow > 0f && !this.isDead)
+        /*if (grounded && this.jumpWindow > 0f && !this.isDead)
         {
             Debug.Log("Forgiving jump");
             rb.AddForce(new Vector2(0, jumpTakeOffSpeed * 2f));
             this.jumpWindow = 0f;
-        }
-        else if (grounded && this.jumpWindow <= 0f && !this.isDead)
+        }*/
+        if (grounded && this.jumpWindow <= 0f && !this.isDead)
         {
             // Normal jump
             if (Input.GetButtonDown("Jump") && grounded && !this.isDead)
