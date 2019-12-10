@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
         {
             if(this.gameObject != null)
             {
-                Destroy(this.gameObject);
+                DestroyImmediate(this.gameObject);
             }
            
         }

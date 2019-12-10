@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     float groundRadius = 0.2f;
     private bool grounded;
     public LayerMask whatIsGround;
+    private int numAttack = 0;
 
     // ADSR implemetation
     // Taken for Dr.Mccoy's class demo project
@@ -134,6 +135,12 @@ public class PlayerMovement : MonoBehaviour
         ComputeVelocity();
     }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        this.attabox.SetActive(false);
+        this.animator.SetBool("Attack", false);
+    }
     private void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
@@ -144,35 +151,17 @@ public class PlayerMovement : MonoBehaviour
             this.AttackDuration = 0.25f;
         }
 
-        if (this.AttackDuration > 0)
+        if (this.AttackDuration > 0 && numAttack == 0)
         {
+            numAttack = 1;
             this.attabox.SetActive(true);
             this.animator.SetBool("Attack", true);
 
-            var contacts = new Collider2D[32];
-            var hitSomething = false;
-
-            this.attabox.gameObject.GetComponent<BoxCollider2D>().GetContacts(contacts);
-
-            foreach (var col in contacts)
-            {
-                if (col != null && col.gameObject.tag == "Enemy")
-                {
-                    // Deal damage to enemy
-
-                    hitSomething = true;
-                }
-            }
-
-            if (hitSomething)
-            {
-                this.AttackDuration = 0;
-            }
         }
         else
         {
-            this.attabox.SetActive(false);
-            this.animator.SetBool("Attack", false);
+            StartCoroutine(Wait());
+            numAttack = 0;
         }
 
         this.AttackDuration -= Time.deltaTime;
@@ -288,24 +277,34 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MyCoroutine(Collider2D collision)
     {
         this.gameObject.GetComponent<Health>().health--;
-        GameObject Enemy = collision.gameObject;
-        Animator anim = Enemy.GetComponentInChildren<Animator>();
-        yield return new WaitForSeconds(1f);   
+        if(collision.gameObject != null)
+        {
+            
+            GameObject Enemy = collision.gameObject;
+            Animator anim = Enemy.GetComponentInChildren<Animator>();
+            yield return new WaitForSeconds(1f);
+            if(anim != null)
+            {
+                anim.SetBool("Attack", false);
+                Enemy.GetComponent<AudioSource>().enabled = false;
+            }
 
-        anim.SetBool("Attack", false);
-        // Decreament health by enemy attack value
-        
+            // Decreament health by enemy attack value
+
+        }
+
     }
     // Collision with enemy
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collision happen");
-        
-        if (collision.gameObject.tag == "Enemy" && this.damageProtectionTimer < 0.0f)
+         var R = Random.Range(0, 3);
+        if (collision.gameObject.tag == "Enemy" && this.damageProtectionTimer < 0.0f && collision.gameObject != null)
         {
             GameObject Enemy = collision.gameObject;
             Animator anim = Enemy.GetComponentInChildren<Animator>();
             anim.SetBool("Attack", true);
+            Enemy.GetComponent<AudioSource>().enabled = true;
             StartCoroutine(MyCoroutine(collision));
             Debug.Log("Damage");
 
@@ -327,7 +326,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Knock back effect
             var attackDirection = (this.transform.position.x < collision.transform.position.x) ? 1 : -1;
-            this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(attackDirection, 0, 0) * 5.0f);
+            this.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 5);
         }
     }
 }
