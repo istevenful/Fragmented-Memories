@@ -43,7 +43,7 @@ namespace TMPro
         {
             if (this.StopTrigger != null && !this.TextStopped)
             {
-                Debug.Log(Vector2.Distance(this.StopTrigger.transform.position, this.Player.transform.position));
+                //Debug.Log(Vector2.Distance(this.StopTrigger.transform.position, this.Player.transform.position));
 
                 if (Vector2.Distance(this.StopTrigger.transform.position, this.Player.transform.position) < 10f)
                 {

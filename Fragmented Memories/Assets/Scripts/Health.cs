@@ -12,10 +12,15 @@ public class Health : MonoBehaviour
     public Sprite AliveFlower;
     public Sprite DeadFlower;
 
-
+    
     public static bool PlayerisDead = false;
     [SerializeField] private GameObject GameOverMenuUI;
     [SerializeField] private int MenuIndex;
+
+    private void Start()
+    {
+        Debug.Log(this.name);
+    }
     void Update()
     {
         if(health > NumberofHealth)

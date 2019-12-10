@@ -285,18 +285,36 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    IEnumerator MyCoroutine(Collider2D collision)
+    {
+        this.gameObject.GetComponent<Health>().health--;
+        GameObject Enemy = collision.gameObject;
+        Animator anim = Enemy.GetComponentInChildren<Animator>();
+        yield return new WaitForSeconds(1f);   
 
+        anim.SetBool("Attack", false);
+        // Decreament health by enemy attack value
+        
+    }
     // Collision with enemy
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collision happen");
-
-        if (collision.gameObject.tag == "enemy" && this.damageProtectionTimer < 0.0f)
+        
+        if (collision.gameObject.tag == "Enemy" && this.damageProtectionTimer < 0.0f)
         {
+            GameObject Enemy = collision.gameObject;
+            Animator anim = Enemy.GetComponentInChildren<Animator>();
+            anim.SetBool("Attack", true);
+            StartCoroutine(MyCoroutine(collision));
             Debug.Log("Damage");
 
-            // Decreament health by enemy attack value
-            this.gameObject.GetComponent<Health>().health--;
+
+
+
+
+            
+            
 
             if (this.gameObject.GetComponent<Health>().health <= 0)
             {
@@ -309,7 +327,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Knock back effect
             var attackDirection = (this.transform.position.x < collision.transform.position.x) ? 1 : -1;
-            this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(attackDirection, 0, 0) * 5.0f);
+            this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(attackDirection, 0, 0) * 5.0f);
         }
     }
 }
