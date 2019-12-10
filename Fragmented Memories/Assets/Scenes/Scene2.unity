@@ -9477,7 +9477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47a6d8a959eed24ba39a72a87fac824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
 --- !u!1 &328228660
 GameObject:
   m_ObjectHideFlags: 0
@@ -14784,7 +14784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47a6d8a959eed24ba39a72a87fac824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
 --- !u!4 &564765338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4848759976921910, guid: 5e42779b2097e7c4aa004a606baf6f27,
@@ -39201,7 +39201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47a6d8a959eed24ba39a72a87fac824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
 --- !u!1001 &1112873873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57227,7 +57227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47a6d8a959eed24ba39a72a87fac824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
 --- !u!1 &1529844090
 GameObject:
   m_ObjectHideFlags: 0
@@ -59430,6 +59430,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331054892124478248, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331054892124478248, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: MaxSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
@@ -64107,7 +64117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47a6d8a959eed24ba39a72a87fac824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
 --- !u!1001 &1892352600
 PrefabInstance:
   m_ObjectHideFlags: 0
