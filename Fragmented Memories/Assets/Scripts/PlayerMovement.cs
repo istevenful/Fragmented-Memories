@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded;
     public LayerMask whatIsGround;
     private int numAttack = 0;
-
+    private float delay = 0;
     // ADSR implemetation
     // Taken for Dr.Mccoy's class demo project
     private void ResetTimers()
@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
 
         this.animator.SetBool("Dead", isDead);
         this.attackDuration = 0f;
-        this.grounded = false;
+        this.grounded = true;
         this.animator.SetBool("Attack", false);
     }
 
@@ -148,27 +148,28 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && !this.isDead)
         {
-            //this.normalAttack.Attack(this.gameObject);
-            this.AttackDuration = 0.25f;
+            Debug.Log(delay);
+
+            if (delay == 0)
+            {
+                delay += Time.deltaTime;
+                numAttack = 1;
+                this.attabox.SetActive(true);
+                this.animator.SetBool("Attack", true);
+                this.GetComponent<AudioSource>().enabled = true;
+                StartCoroutine(Wait());
+                numAttack = 0;
+            }
         }
 
-        if (this.AttackDuration > 0 && numAttack == 0)
+        if (delay != 0 && delay < 2)
         {
-            
-            numAttack = 1;
-            this.attabox.SetActive(true);
-            this.animator.SetBool("Attack", true);
-            this.GetComponent<AudioSource>().enabled = true;
-            
-
+            delay += Time.deltaTime;
         }
-        else
+        else if (delay >= 2)
         {
-            StartCoroutine(Wait());
-            numAttack = 0;
+            delay = 0;
         }
-
-        this.AttackDuration -= Time.deltaTime;
         this.damageProtectionTimer -= Time.deltaTime;
     }
 
@@ -281,13 +282,13 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MyCoroutine(Collider2D collision)
     {
         this.gameObject.GetComponent<Health>().health--;
-        if(collision.gameObject != null)
+        if (collision.gameObject != null)
         {
-            
+
             GameObject Enemy = collision.gameObject;
             Animator anim = Enemy.GetComponentInChildren<Animator>();
             yield return new WaitForSeconds(1f);
-            if(anim != null)
+            if (anim != null)
             {
                 anim.SetBool("Attack", false);
                 Enemy.GetComponent<AudioSource>().enabled = false;
@@ -302,7 +303,7 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collision happen");
-         var R = Random.Range(0, 3);
+        var R = Random.Range(0, 3);
         if (collision.gameObject.tag == "Enemy" && this.damageProtectionTimer < 0.0f && collision.gameObject != null && R == 1)
         {
             GameObject Enemy = collision.gameObject;
@@ -312,12 +313,6 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(MyCoroutine(collision));
             Debug.Log("Damage");
 
-
-
-
-
-            
-            
 
             if (this.gameObject.GetComponent<Health>().health <= 0)
             {
