@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded;
     public LayerMask whatIsGround;
     private int numAttack = 0;
-
+    private float delay = 0;
     // ADSR implemetation
     // Taken for Dr.Mccoy's class demo project
     private void ResetTimers()
@@ -148,27 +148,28 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && !this.isDead)
         {
-            //this.normalAttack.Attack(this.gameObject);
-            this.AttackDuration = 0.25f;
+            Debug.Log(delay);
+
+            if (delay == 0)
+            {
+                delay += Time.deltaTime;
+                numAttack = 1;
+                this.attabox.SetActive(true);
+                this.animator.SetBool("Attack", true);
+                this.GetComponent<AudioSource>().enabled = true;
+                StartCoroutine(Wait());
+                numAttack = 0;
+            }
         }
 
-        if (this.AttackDuration > 0 && numAttack == 0)
+        if (delay != 0 && delay <2)
         {
-            
-            numAttack = 1;
-            this.attabox.SetActive(true);
-            this.animator.SetBool("Attack", true);
-            this.GetComponent<AudioSource>().enabled = true;
-            
-
+            delay += Time.deltaTime;
         }
-        else
+        else if (delay >= 2)
         {
-            StartCoroutine(Wait());
-            numAttack = 0;
+            delay = 0;
         }
-
-        this.AttackDuration -= Time.deltaTime;
         this.damageProtectionTimer -= Time.deltaTime;
     }
 
