@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
 
         this.animator.SetBool("Dead", isDead);
         this.attackDuration = 0f;
-        this.grounded = true;
+        this.grounded = false;
         this.animator.SetBool("Attack", false);
     }
 
@@ -227,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
             if (canAirJump)
             {
                 Debug.Log("air jump");
-                rb.AddForce(new Vector2(0, jumpTakeOffSpeed));
+                rb.AddForce(new Vector2(0, jumpTakeOffSpeed * 0.5f));
                 canAirJump = false;
             }
         }
@@ -235,15 +235,17 @@ public class PlayerMovement : MonoBehaviour
         // Reset air jump
         if (grounded)
         {
-            // canAirJump = true;
+            canAirJump = true;
         }
 
         // Forgiving jump
         if (grounded && this.jumpWindow > 0f && !this.isDead)
         {
-            rb.AddForce(new Vector2(0, jumpTakeOffSpeed));
+            Debug.Log("Forgiving jump");
+            rb.AddForce(new Vector2(0, jumpTakeOffSpeed * 2f));
+            this.jumpWindow = 0f;
         }
-        else
+        else if (grounded && this.jumpWindow <= 0f && !this.isDead)
         {
             // Normal jump
             if (Input.GetButtonDown("Jump") && grounded && !this.isDead)
