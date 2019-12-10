@@ -53375,7 +53375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47a6d8a959eed24ba39a72a87fac824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
 --- !u!114 &1124550024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112278,7 +112278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47a6d8a959eed24ba39a72a87fac824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
 --- !u!114 &1998938007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116762,8 +116762,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  MaxSpeed: 10
-  jumpTakeOffSpeed: 250
+  MaxSpeed: 6
+  jumpTakeOffSpeed: 350
   jumpWindow: 0.25
   attabox: {fileID: 1013263409}
   damageProtection: 1
