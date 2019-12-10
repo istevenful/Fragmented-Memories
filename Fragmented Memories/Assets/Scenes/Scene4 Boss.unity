@@ -5447,58 +5447,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: NumberofHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: health
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[0]
-      value: 
-      objectReference: {fileID: 67751496}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[1]
-      value: 
-      objectReference: {fileID: 189886285}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[2]
-      value: 
-      objectReference: {fileID: 1334301545}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[3]
-      value: 
-      objectReference: {fileID: 1946414647}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: AliveFlower
-      value: 
-      objectReference: {fileID: 21300000, guid: fc2da7da7cb7a234cadf339b309d6465,
-        type: 3}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: DeadFlower
-      value: 
-      objectReference: {fileID: 21300000, guid: cf83c0284a0e2a243928449402b1494f,
-        type: 3}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: GameOverMenuUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4266620294057888, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667, type: 3}
       propertyPath: m_LocalPosition.x
       value: 119.71
@@ -5605,6 +5553,58 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: NumberofHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: health
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[0]
+      value: 
+      objectReference: {fileID: 67751496}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[1]
+      value: 
+      objectReference: {fileID: 189886285}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1334301545}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[3]
+      value: 
+      objectReference: {fileID: 1946414647}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: AliveFlower
+      value: 
+      objectReference: {fileID: 21300000, guid: fc2da7da7cb7a234cadf339b309d6465,
+        type: 3}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: DeadFlower
+      value: 
+      objectReference: {fileID: 21300000, guid: cf83c0284a0e2a243928449402b1494f,
+        type: 3}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: GameOverMenuUI
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
@@ -10846,7 +10846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2010888065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11076,58 +11076,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: NumberofHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: health
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[0]
-      value: 
-      objectReference: {fileID: 67751496}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[1]
-      value: 
-      objectReference: {fileID: 189886285}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[2]
-      value: 
-      objectReference: {fileID: 1334301545}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[3]
-      value: 
-      objectReference: {fileID: 1946414647}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: AliveFlower
-      value: 
-      objectReference: {fileID: 21300000, guid: fc2da7da7cb7a234cadf339b309d6465,
-        type: 3}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: DeadFlower
-      value: 
-      objectReference: {fileID: 21300000, guid: cf83c0284a0e2a243928449402b1494f,
-        type: 3}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: GameOverMenuUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4266620294057888, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -11214,6 +11162,58 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: NumberofHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: health
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[0]
+      value: 
+      objectReference: {fileID: 67751496}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[1]
+      value: 
+      objectReference: {fileID: 189886285}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1334301545}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[3]
+      value: 
+      objectReference: {fileID: 1946414647}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: AliveFlower
+      value: 
+      objectReference: {fileID: 21300000, guid: fc2da7da7cb7a234cadf339b309d6465,
+        type: 3}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: DeadFlower
+      value: 
+      objectReference: {fileID: 21300000, guid: cf83c0284a0e2a243928449402b1494f,
+        type: 3}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: GameOverMenuUI
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
