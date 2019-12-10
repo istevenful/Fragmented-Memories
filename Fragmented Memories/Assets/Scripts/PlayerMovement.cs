@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         this.ReleaseTimer = 0.0f;
     }
 
+    // TODO: Issue with release timer causes player to stop moving at random points
     float ADSREnvelope()
     {
         float velocity = 0.0f;
@@ -92,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
             this.SustainTimer += Time.deltaTime;
             if (this.SustainTimer > this.SustainDuration)
             {
-                this.CurrentPhase = Phase.Release;
+            
+                // this.CurrentPhase = Phase.Release;
             }
         }
         else if (Phase.Release == this.CurrentPhase)
@@ -230,6 +232,7 @@ public class PlayerMovement : MonoBehaviour
         // Air jump
         this.jumpWindow -= Time.deltaTime;
 
+        /*
         // Still in air 
         if (Input.GetButtonDown("Jump") && !grounded && !this.isDead)
         {
@@ -249,7 +252,7 @@ public class PlayerMovement : MonoBehaviour
         {
             canAirJump = true;
         }
-
+        
         // Forgiving jump
         if (grounded && this.jumpWindow > 0f && !this.isDead)
         {
@@ -257,13 +260,14 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpTakeOffSpeed * 2f));
             this.jumpWindow = 0f;
         }
-        else if (grounded && this.jumpWindow <= 0f && !this.isDead)
+        */
+        if (grounded && this.jumpWindow <= 0f && !this.isDead)
         {
             // Normal jump
             if (Input.GetButtonDown("Jump") && grounded && !this.isDead)
             {
                 Debug.Log("normal jump");
-                rb.AddForce(new Vector2(0, jumpTakeOffSpeed));
+                rb.AddForce(new Vector2(rb.velocity.x, jumpTakeOffSpeed));
             }
             //else if (Input.GetButtonUp("Jump") && !this.isDead)
             //{
@@ -293,8 +297,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // TODO: Resolve hitbox and null object reference issues, taking out damage for now
+    /*
     IEnumerator MyCoroutine(Collider2D collision)
     {
+        
         this.gameObject.GetComponent<Health>().health--;
         GameObject Enemy = collision.gameObject;
         Animator anim = Enemy.GetComponentInChildren<Animator>();
@@ -303,7 +310,10 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Attack", false);
         // Decreament health by enemy attack value
         
+        
     }
+    */
+
     // Collision with enemy
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -314,15 +324,8 @@ public class PlayerMovement : MonoBehaviour
             GameObject Enemy = collision.gameObject;
             Animator anim = Enemy.GetComponentInChildren<Animator>();
             anim.SetBool("Attack", true);
-            StartCoroutine(MyCoroutine(collision));
-            Debug.Log("Damage");
-
-
-
-
-
-            
-            
+            // StartCoroutine(MyCoroutine(collision));
+            Debug.Log("Damage");  
 
             if (this.gameObject.GetComponent<Health>().health <= 0)
             {

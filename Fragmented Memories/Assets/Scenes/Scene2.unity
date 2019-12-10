@@ -1060,7 +1060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &48389730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10021,6 +10021,8 @@ MonoBehaviour:
   FollowTime: 1000
   EnlargeTime: 0
   EnlargeSize: 0
+  ShrinkTime: 0
+  ShrinkSize: 0
   StopTrigger: {fileID: 925850627}
 --- !u!114 &343393988
 MonoBehaviour:
@@ -16448,6 +16450,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 159123013}
     m_Modifications:
+    - target: {fileID: 1853753906221114, guid: 2a2f1cbd02939804fbbd2e7c6266ca0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4751866867341248, guid: 2a2f1cbd02939804fbbd2e7c6266ca0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.96
@@ -16478,10 +16484,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4751866867341248, guid: 2a2f1cbd02939804fbbd2e7c6266ca0b, type: 3}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1853753906221114, guid: 2a2f1cbd02939804fbbd2e7c6266ca0b, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -36341,6 +36343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1506692056}
     m_Modifications:
+    - target: {fileID: 1682812190224580, guid: 04cfd40ce383109479cafdb6678efe7a, type: 3}
+      propertyPath: m_Name
+      value: Mushrooms 01
+      objectReference: {fileID: 0}
     - target: {fileID: 4374543473905888, guid: 04cfd40ce383109479cafdb6678efe7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.13
@@ -36384,10 +36390,6 @@ PrefabInstance:
     - target: {fileID: 4374543473905888, guid: 04cfd40ce383109479cafdb6678efe7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682812190224580, guid: 04cfd40ce383109479cafdb6678efe7a, type: 3}
-      propertyPath: m_Name
-      value: Mushrooms 01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04cfd40ce383109479cafdb6678efe7a, type: 3}
@@ -38544,6 +38546,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1394996449}
     m_Modifications:
+    - target: {fileID: 1427805010456150, guid: 5e42779b2097e7c4aa004a606baf6f27, type: 3}
+      propertyPath: m_Name
+      value: Dust 02 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4848759976921910, guid: 5e42779b2097e7c4aa004a606baf6f27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.55
@@ -38587,10 +38593,6 @@ PrefabInstance:
     - target: {fileID: 4848759976921910, guid: 5e42779b2097e7c4aa004a606baf6f27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427805010456150, guid: 5e42779b2097e7c4aa004a606baf6f27, type: 3}
-      propertyPath: m_Name
-      value: Dust 02 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e42779b2097e7c4aa004a606baf6f27, type: 3}
@@ -39625,6 +39627,8 @@ MonoBehaviour:
   FollowTime: 0
   EnlargeTime: 0
   EnlargeSize: 0
+  ShrinkTime: 0
+  ShrinkSize: 0
   StopTrigger: {fileID: 0}
 --- !u!114 &1137044845
 MonoBehaviour:
@@ -54977,6 +54981,8 @@ MonoBehaviour:
   FollowTime: 0
   EnlargeTime: 0
   EnlargeSize: 0
+  ShrinkTime: 0
+  ShrinkSize: 0
   StopTrigger: {fileID: 0}
 --- !u!114 &1444905973
 MonoBehaviour:
@@ -59414,6 +59420,58 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: NumberofHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: health
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[0]
+      value: 
+      objectReference: {fileID: 2008738255}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1828729360}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[2]
+      value: 
+      objectReference: {fileID: 143513988}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: flowers.Array.data[3]
+      value: 
+      objectReference: {fileID: 2041639663}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: AliveFlower
+      value: 
+      objectReference: {fileID: 21300000, guid: fc2da7da7cb7a234cadf339b309d6465,
+        type: 3}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: DeadFlower
+      value: 
+      objectReference: {fileID: 21300000, guid: cf83c0284a0e2a243928449402b1494f,
+        type: 3}
+    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
+        type: 3}
+      propertyPath: GameOverMenuUI
+      value: 
+      objectReference: {fileID: 89438731}
     - target: {fileID: 4266620294057888, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.84
@@ -59501,58 +59559,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: NumberofHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: health
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[0]
-      value: 
-      objectReference: {fileID: 2008738255}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[1]
-      value: 
-      objectReference: {fileID: 1828729360}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[2]
-      value: 
-      objectReference: {fileID: 143513988}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: flowers.Array.data[3]
-      value: 
-      objectReference: {fileID: 2041639663}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: AliveFlower
-      value: 
-      objectReference: {fileID: 21300000, guid: fc2da7da7cb7a234cadf339b309d6465,
-        type: 3}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: DeadFlower
-      value: 
-      objectReference: {fileID: 21300000, guid: cf83c0284a0e2a243928449402b1494f,
-        type: 3}
-    - target: {fileID: 3218213188955231008, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
-        type: 3}
-      propertyPath: GameOverMenuUI
-      value: 
-      objectReference: {fileID: 89438731}
     - target: {fileID: 61839966149026272, guid: 1f4ddbc1a6602ee40ac4f9006d5b3667,
         type: 3}
       propertyPath: m_UsedByEffector
@@ -68846,6 +68852,8 @@ MonoBehaviour:
   FollowTime: 4
   EnlargeTime: 0
   EnlargeSize: 0
+  ShrinkTime: 0
+  ShrinkSize: 0
   StopTrigger: {fileID: 0}
 --- !u!114 &2138305949
 MonoBehaviour:
