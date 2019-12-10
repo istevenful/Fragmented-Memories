@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float PatrolSpeed = 1f;
     [SerializeField] Transform GroundCheck;
     [SerializeField] LayerMask WhatIsGround;
-    [SerializeField] float ScanRange = 10f;
+    [SerializeField] float ScanRange = 5f;
 
     private Animator animator;
     private Rigidbody2D rigidbody2D;
@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     private bool Grounded = false;
 
     private float Health = 100f;
-    private bool ChasePaused = false;
+    private bool ChasePaused = true;
     // private Attack Attacking;
     // Use this for initialization
     void Start()
@@ -49,19 +49,23 @@ public class EnemyAI : MonoBehaviour
         else if (TargetIsWithinScanRange())
         {
             // Debug.Log("Chasing");
-            this.Chasing.Chasing();
+            this.ChasePaused = false;
         }
-        else
+        else if (this.ChasePaused)
         {
             // Debug.Log("Patroling");
             this.Patroling.Patroling();
+        }
+        else if (!this.ChasePaused)
+        {
+            this.Chasing.Chasing();
         }
     }
 
     private bool TargetIsInRange()
     {
-        Debug.Log(Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position));
-        return Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position) < 1f;
+        // Debug.Log(Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position));
+        return Vector2.Distance(this.gameObject.transform.position, this.Target.transform.position) < 3f;
     }
 
     private bool TargetIsWithinScanRange()

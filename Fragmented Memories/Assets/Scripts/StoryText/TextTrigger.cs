@@ -22,9 +22,12 @@ namespace TMPro
 
         [SerializeField] float EnlargeTime = 0f;
         [SerializeField] float EnlargeSize = 0f;
+
+        [SerializeField] GameObject StopTrigger;
         private bool StartFollowing = false;
 
         private float TimePassed = 0f;
+        private bool TextStopped = false;
 
         private TextMeshPro StoryText;
         private GameObject Player;
@@ -38,8 +41,17 @@ namespace TMPro
 
         private void Update()
         {
-            // Debug.Log(Vector2.Distance(this.StoryText.transform.position, this.Player.transform.position));
-            if (Vector2.Distance(this.StoryText.transform.position, this.Player.transform.position) < this.TriggerDistance)
+            if (this.StopTrigger != null && !this.TextStopped)
+            {
+                Debug.Log(Vector2.Distance(this.StopTrigger.transform.position, this.Player.transform.position));
+
+                if (Vector2.Distance(this.StopTrigger.transform.position, this.Player.transform.position) < 10f)
+                {
+                    this.TextStopped = true;
+                    this.StoryText.color = Color.clear;
+                }
+            }
+            if (Vector2.Distance(this.StoryText.transform.position, this.Player.transform.position) < this.TriggerDistance && !this.TextStopped)
             {
                 if (!this.TextVisible)
                 {

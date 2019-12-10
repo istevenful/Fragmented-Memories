@@ -41,7 +41,7 @@ public class AudioTrigger : MonoBehaviour
             if (this.audioSource.isPlaying)
             {
                 this.audioSource.loop = false;
-                StartFade(7f, this.Volume, 0f);
+                this.audioSource.Stop();
             }
         }
         if (this.E1 != null)
@@ -57,7 +57,7 @@ public class AudioTrigger : MonoBehaviour
 
     private bool TargetIsInRange()
     {
-        Debug.Log(Vector2.Distance(this.audioSource.transform.position, this.Player.transform.position));
+        // Debug.Log(Vector2.Distance(this.audioSource.transform.position, this.Player.transform.position));
         return Vector2.Distance(this.audioSource.transform.position, this.Player.transform.position) < this.Range;
     }
 
