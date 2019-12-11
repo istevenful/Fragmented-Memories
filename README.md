@@ -49,7 +49,7 @@ HealthScript: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fra
  
 ## Movement/Physics
 
-**Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
+We impletmented a classic platformer movement/physics as the base for out game. On top of that we impletementd ADSR for horizontial movements. Jumping is where we spend the most focus on, since it ties into combat and platformer the most. We designed 3 types of jumping: normal jump, air jump and forgiving jump. Normal jump is when a player is grounded and jumps. Air jump is the ability to jump in air once per takeoff (jumpForce is smaller then normal jump). Forgiving jump is when for when users pressed jump just few frames before the charater grounded and this logic will rememeber that user did press jump and jump for them when character grounded, ie the forgivness. (Note: Air jump and forgiving jump are commented out in this version because there are odd chances it creates a super jump and shot player out into the sky. To active it please uncomment the code in `PlayerMovement.cs`.)
 
 
  
@@ -62,9 +62,7 @@ HealthScript: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fra
 
 ## Input
 
-**Describe the default input configuration.**
-
-**Add an entry for each platform or input style your project supports.**
+Defualt: arrowkeys/A or D to move, space to jump and leftAlt to attack. All inputs are taken from the keybroad. 
 
 
  
@@ -78,7 +76,7 @@ HealthScript: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fra
 * Press Kit and Trailer :     Ruifeng Zhang
 * Audio :                     Travis Garcia/Steven Tan
 * Narrative Design :          Steven Tan/Travis Garcia
-* Game Feel :                 Ethan Chian/Steven Tan/Travis Garcia
+* Game Feel :                 Ethan Chiang/Steven Tan/Travis Garcia
 
 ## Audio
 
@@ -88,9 +86,10 @@ HealthScript: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fra
 
 ## Gameplay Testing
 
-**Add a link to the full results of your gameplay tests.**
+This role was splited by all the team memebers since we are down one person. Each team memeber had tested the game intensivly in all phases of development, here are the key foundings:
 
-**Summarize the key findings from your gameplay tests.**
+* Feedbacks on different type of movements tested during development: Eventhough the player is a human, however, the game is set in a deam land, therefore, a more light, fast-reacting and fluid movement is best fitted for the character. 
+* Feadbacks on combat: First, we found that hit-boxes are a good method to adjust the difficulting of combat. Cooldowns and attack and gaps between when the character can takes another damage is also something to think about when setting the numbers. 
 
 ## Narrative Design
 
@@ -104,5 +103,8 @@ HealthScript: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fra
 
 ## Game Feel
 
-**Document what you added to and how you tweaked your game to improve its game feel.**
+* Movement: tested different ADSR curves to find the best movement type for the main character.
+* Hit-box: adjust the size of hit-boxes, size of hit-box is directly realating to the difficultiy of combat.
+* Jumping: jumpforce has tested with a few different numbers, the ability of air jump is to make players has bette rcomtrol over the character and make moving arround platforms easier. Forgiving jump is to aviod the situation that player might think the game is "broken" when the jump has not executed when pressed too eariler. (Note: this idea came from the GDC talk by developers from Celeste.)
+* Combat: since the combat system is farily simply, the way we adjust the difficulty to by changing the size of hit-boxes and cooldown on attacks and damage taken.
 
