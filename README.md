@@ -93,7 +93,7 @@ Audio was setup in a zone system. When inside the zone, audio would fade in or o
 * Audio was obtained from the following sources:
 https://www.salamisound.com/info1
 https://freesound.org/people/RawBeef/downloaded_sounds/
-and a music pack was provided by Steven who had purchased it from the assets store a few years ago
+and a music pack was provided by Steven who had purcahsed the RPg/Fantasy Music Pack a few years ago: https://assetstore.unity.com/packages/audio/music/orchestral/rpg-fantasy-music-pack-100398
 
 We went for a more serious game where each level had a slightly different tone that built towards the overall narrative and sense of progression in the game. The menu uses sad music to set the initial tone. When the game starts, upbeat music encourages exploration and wonder, instilling a similar sense of intrigue in the player as the character expresses. When the music stops, things should feel tense. Leaves crunching in silence in the next level further builds this tension before the first important encounter with a mysterious shadow. This encounter is punctuated with more frantic music so that the player begins to feel a similar sense of discomfort. The next zone uses ominous hymns to slow down the pace of the game while still building tension. The last zone uses slightly creepy music to reveal the true theme of the narrative and punctuate the story text as the player uncovers what’s really going on.
 
