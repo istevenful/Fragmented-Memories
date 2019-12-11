@@ -10,7 +10,7 @@ You wake up with fragmented memories in an unfamiliar place. You only remember p
 
 * Core Game Mechanics: Platforming, reading story text, attacking enemies
 * Goals: To reach the end and figure out how you got to this strange place
-* Controls: Based controls used for movement, alt key used for attack
+* Controls: Basic controls used for movement, alt key used for attack
 
 
 # Main Roles #
