@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Modified to take in specific word ranges.
+ * A bit finnicky and doesn't always play right, restarting Unity seems to be the only fix.
+ */
 
 namespace TMPro.Examples
 {

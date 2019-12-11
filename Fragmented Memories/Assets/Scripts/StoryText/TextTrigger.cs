@@ -3,11 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * Textmeshpro shares materials by default so when change color of one text mesh, another textmeshes color will also change
+ * Textmeshpro shares materials by default so when changing color of one text mesh, another textmesh's color will also change.
  * To get around this, you'll need to change the font asset under textmesh pro to a duplicated and seperate material
- * This means things will get really messy and annoying with lots of text...
- *
- * Also, needed to reuse fadeout here because coroutines were getting shared between the objects for some reason.
  */
 
 namespace TMPro

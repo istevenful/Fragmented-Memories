@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/*
+ * Determines behavior based on the range of the target. Handles movement and direction. Can build upon to handle attacks.
+ */
+
 public class EnemyAI : MonoBehaviour
 {
     public Transform[] Points;
@@ -35,6 +40,7 @@ public class EnemyAI : MonoBehaviour
         this.animator = this.gameObject.GetComponent<Animator>();
         this.rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
         this.rigidbody2D.freezeRotation = true;
+        this.AttackBox.SetActive(false);
 
         this.Patroling = this.gameObject.GetComponent<Patrol>();
         this.Chasing = this.gameObject.GetComponent<Chase>();
@@ -44,7 +50,6 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        this.AttackBox.SetActive(false);
         if (this.FinalScene)
         {
             StopMoving();
@@ -52,19 +57,8 @@ public class EnemyAI : MonoBehaviour
         }
         else if (TargetIsInRange())
         {
-            if (this.PauseAfterAttacking < 2f)
-            {
-                this.PauseAfterAttacking += Time.deltaTime;
-                StopMoving();
-                StopAttacking();
-            }
-            else
-            {
-                this.AttackBox.SetActive(true);
-                StopMoving();
-                Attacking();
-                this.PauseAfterAttacking = 0f;
-            }
+            // Took out combat stuff.
+            StopMoving();
         }
         else if (TargetIsWithinScanRange())
         {

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Determines what ending the player gets based on their final actions.
+ */
+
 public class FinalEncounterSetup : MonoBehaviour
 {
     [SerializeField] private GameObject EnemyObject;

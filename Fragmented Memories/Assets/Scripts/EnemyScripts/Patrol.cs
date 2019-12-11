@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 /*
  * This uses the basic unity tutorial code for having an agent patrol between points.
- * To setup patrol points, create two empty objects in the world a set distance apart
- * Drag those points into the "Points" Component on this script
+ * To setup patrol points, create two empty objects in the world a set distance apart.
+ * Drag those points into the "Points" Component on this script.
  */
 
 

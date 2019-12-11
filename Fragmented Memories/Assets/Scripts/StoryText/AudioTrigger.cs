@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Basic fade in and out using lerp and coroutines based on proximity to sound source.
+ */
+
 public class AudioTrigger : MonoBehaviour
 {
     [SerializeField] float StartVolume = 0f;
