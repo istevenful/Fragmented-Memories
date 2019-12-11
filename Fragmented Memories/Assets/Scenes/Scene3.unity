@@ -18195,9 +18195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3a677228f5ddd43a73958c316fe157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  clampLeft: -37.26
-  clampRight: 6.09
 --- !u!95 &375904326
 Animator:
   serializedVersion: 3
@@ -30407,7 +30404,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 23, y: 13}
+  m_Size: {x: 26.5, y: 13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
