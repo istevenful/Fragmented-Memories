@@ -7,9 +7,9 @@
 
 **In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
 
-* Core Game Mechanics:
-* Goals: 
-* Controls:
+* Core Game Mechanics: Platforming, reading story text, attacking enemies
+* Goals: To reach the end and figure out how you got to this strange place
+* Controls: Based controls used for movement, alt key used for attack
 
 
 # Main Roles #
@@ -70,6 +70,11 @@ Defualt: arrowkeys/A or D to move, space to jump and leftAlt to attack. All inpu
 ## Game Logic
 
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
+This game was broken down into 4 scenes, each with their individual story that built towards the overall story. Scenes were loaded using a scene loading script: https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/LoadNewScene.cs#L1
+Data wasn't carried over in between scenes and each scene was carefully crafted by the animation and visuals team members.
+ADSR was used for the movements https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/PlayerMovement.cs#L72
+Player location was tracked using the Vector2.Distance function to determine how enemies, music, and text should respond.
+https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/TextTrigger.cs#L55
 
 # Sub-Roles
 
@@ -81,11 +86,18 @@ Defualt: arrowkeys/A or D to move, space to jump and leftAlt to attack. All inpu
 
 ## Audio
 
-* 
-* 
-* Implementation: 
+Audio was setup in a zone system. When inside the zone, audio would fade in or out using lerp. The zones were placed in a way to enhance player experience for when other sounds would need to be heard such as leaves crunching or when silence was used to build tension. https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/AudioTrigger.cs#L37
+
+* Audio was obtained from the following sources:
+https://www.salamisound.com/info1
+https://freesound.org/people/RawBeef/downloaded_sounds/
+and a music pack was provided by Steven who had purchased it from the assets store a few years ago
+
+We went for a more serious game where each level had a slightly different tone that built towards the overall narrative and sense of progression in the game. The menu uses sad music to set the initial tone. When the game starts, upbeat music encourages exploration and wonder, instilling a similar sense of intrigue in the player as the character expresses. When the music stops, things should feel tense. Leaves crunching in silence in the next level further builds this tension before the first important encounter with a mysterious shadow. This encounter is punctuated with more frantic music so that the player begins to feel a similar sense of discomfort. The next zone uses ominous hymns to slow down the pace of the game while still building tension. The last zone uses slightly creepy music to reveal the true theme of the narrative and punctuate the story text as the player uncovers what’s really going on.
 
 ## Gameplay Testing
+
+https://drive.google.com/open?id=1JJS6BolwAGsbFIvSvnAEqOuuN1g_6zDiFRZ7rwxnHdk
 
 This role was splited by all the team memebers since we are down one person. Each team memeber had tested the game intensivly in all phases of development, here are the key foundings:
 
@@ -94,8 +106,9 @@ This role was splited by all the team memebers since we are down one person. Eac
 
 ## Narrative Design
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+As a narrative driven game, it was important that the narrative system felt interesting and that the narrative itself was intriguing. This meant creating custom scripts to give the words themselves juice and to take in feedback about where the narrative was unclear and how the gameplay elements did or didn’t add to the overall narrative experience. The narrative was revised multiple times based on the feedback of others.https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/TextTrigger.cs#L55
 
+Each level was meant to have it’s own tone and story, while still building towards the overall theme and narrative. Large words were used at the beginning of new levels to try and create tone and build the story and the characters changing responses to the world around him created a sense of progression within each level. Colors were used to highlight important words and the duality between certain elements. Text would get larger when the words being said were important to the story. Text would shake to give the player a sense of uncertainty.
 
 ## Press Kit and Trailer
 * Press Kit materials: Raw gameplay footage
@@ -108,4 +121,5 @@ This role was splited by all the team memebers since we are down one person. Eac
 * Hit-box: adjust the size of hit-boxes, size of hit-box is directly realating to the difficultiy of combat.
 * Jumping: jumpforce has tested with a few different numbers, the ability of air jump is to make players has bette rcomtrol over the character and make moving arround platforms easier. Forgiving jump is to aviod the situation that player might think the game is "broken" when the jump has not executed when pressed too eariler. (Note: this idea came from the GDC talk by developers from Celeste.)
 * Combat: since the combat system is farily simply, the way we adjust the difficulty to by changing the size of hit-boxes and cooldown on attacks and damage taken.
-
+* Narrative: Used colors, movements, and fading effects to give the dialogue more juice. https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/TextTrigger.cs#L55
+* Vignette: Added a subtle vignette to improve aesthetic. https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/CustomVignette.cs#L17
