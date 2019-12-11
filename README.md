@@ -2,6 +2,7 @@
 
 ## Summary ##
 
+You wake up with fragmented memories in an unfamiliar place. You only remember pieces of your past and are unable to remember how you got to this strange world. In order to receive parts of your memory back you must explore this strange world and try to piece together narrative clues.
 
 ## Gameplay explanation ##
 
