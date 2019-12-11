@@ -16,10 +16,10 @@ You wake up with fragmented memories in an unfamiliar place. You only remember p
 # Main Roles #
 
 * Animation and Visuals :     Ruifeng Zhang/Steven Tan
-* Game Logic :                Travis Garcia
+* Game Logic :                Travis Garcia/Steven Tan
 * User Interface :            Steven Tan
 * Input :                     Steven Tan/Travis Garcia/Ruifeng Zhang/Ethan Chiang
-* Movement/Physics :          Ethan Chiang
+* Movement/Physics :          Ethan Chiang/Travis Garcia
 
 Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
 
@@ -52,8 +52,8 @@ HealthScript: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fra
 
 We impletmented a classic platformer movement/physics as the base for out game. On top of that we impletementd ADSR for horizontial movements. Jumping is where we spend the most focus on, since it ties into combat and platformer the most. We designed 3 types of jumping: normal jump, air jump and forgiving jump. Normal jump is when a player is grounded and jumps. Air jump is the ability to jump in air once per takeoff (jumpForce is smaller then normal jump). Forgiving jump is when for when users pressed jump just few frames before the charater grounded and this logic will rememeber that user did press jump and jump for them when character grounded, ie the forgivness. (Note: Air jump and forgiving jump are commented out in this version because there are odd chances it creates a super jump and shot player out into the sky. To active it please uncomment the code in `PlayerMovement.cs`.)
 
+AI - Used basic unity physics to move enemies around from different points depending on the location of the player. https://github.com/istevenful/Fragmented-Memories/blob/eefff8d5ea2d6d890ef04c4a5acc9434ea1d12b1/Fragmented%20Memories/Assets/Scripts/EnemyScripts/EnemyAI.cs#L58We were initially going to create a more involved ai system, but after spending too much time trying to implement a path finding algorithm and flying enemy, in the interest of time that had to be scrapped.
 
- 
 ## Animation and Visuals
 Map visuals: Each scene in game is a parallex map, which is a map composed of different images with different Z coordinates. When the camera moves, the player will be able to see some degree of depth illusion. There are also particle effects and lighting throughout the maps to make the map alived and realistic.
 Animation:
