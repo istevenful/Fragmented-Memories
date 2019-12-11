@@ -35,6 +35,7 @@ namespace TMPro
         private TextMeshPro StoryText;
         private GameObject Player;
         private bool TextVisible = false;
+        private bool EnglargeStarted = false;
         private void Start()
         {
             // Fade text if there is text.
@@ -67,8 +68,10 @@ namespace TMPro
                     {
                         this.StartFollowing = true;
                     }
-                    if (EnlargeTime > 0f)
+                    // Can't seem to figure out enlarge bug
+                    if (EnlargeTime > 0f && !this.EnglargeStarted)
                     {
+                        this.EnglargeStarted = true;
                         StartCoroutine(Enlarge());
                     }
                     if (this.ShrinkTime > 0f)

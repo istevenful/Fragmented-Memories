@@ -30562,7 +30562,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 45
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -30588,7 +30588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929823868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.84, y: 29.11, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39606,7 +39606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.01, y: -21.53}
+  m_AnchoredPosition: {x: -37.85, y: -20.83}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137044844
@@ -39648,7 +39648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A Dark Place
+  m_text: The Fight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 903605ded10da4970a5d1da4de699913, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 903605ded10da4970a5d1da4de699913, type: 2}
@@ -39717,10 +39717,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 8.738515, w: 2.6527638}
   m_textInfo:
     textComponent: {fileID: 1137044845}
-    characterCount: 12
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -54978,7 +54978,7 @@ MonoBehaviour:
   TriggerDistance: 5
   FadeInTime: 2
   FadeOutTime: 8
-  FollowTime: 0
+  FollowTime: 2
   EnlargeTime: 0
   EnlargeSize: 0
   ShrinkTime: 0
@@ -67608,7 +67608,7 @@ GameObject:
   - component: {fileID: 2097645748}
   - component: {fileID: 2097645747}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DisableToRemoveBlackScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68952,7 +68952,7 @@ MonoBehaviour:
   TriggerDistance: 5
   FadeInTime: 2
   FadeOutTime: 20
-  FollowTime: 4
+  FollowTime: 2
   EnlargeTime: 0
   EnlargeSize: 0
   ShrinkTime: 0

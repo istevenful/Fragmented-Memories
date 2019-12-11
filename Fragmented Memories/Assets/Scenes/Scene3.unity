@@ -6187,10 +6187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TriggerDistance: 5
   FadeInTime: 2
-  FadeOutTime: 20
+  FadeOutTime: 10
   FollowTime: 1000
-  EnlargeTime: 3
-  EnlargeSize: 3
+  EnlargeTime: 0
+  EnlargeSize: 0
   ShrinkTime: 0
   ShrinkSize: 0
   StopTrigger: {fileID: 0}
@@ -6212,7 +6212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Where did the <color=white>light</color> go?
+  m_text: And so I descended...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d1eb85a361884f34bbe7e1a8ef26383, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 1d1eb85a361884f34bbe7e1a8ef26383, type: 2}
@@ -6278,13 +6278,13 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5.332657, y: 0, z: 6.0119133, w: 3.1973572}
+  m_margin: {x: 5.332657, y: 0.12888384, z: 0.34101295, w: 1.4703102}
   m_textInfo:
     textComponent: {fileID: 117666619}
-    characterCount: 23
+    characterCount: 21
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -10937,7 +10937,7 @@ GameObject:
   - component: {fileID: 212421505}
   - component: {fileID: 212421504}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DisableToRemoveBlackScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

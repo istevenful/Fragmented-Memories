@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587272, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -985,7 +985,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1009,7 +1009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28983996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -26.25, y: 3.4299998, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9114,7 +9114,7 @@ GameObject:
   - component: {fileID: 134355167}
   - component: {fileID: 134355166}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DisableToRemoveBlackScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10805,7 +10805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208101592}
   m_LocalRotation: {x: -0, y: -0, z: 0.06704112, w: 0.9977502}
-  m_LocalPosition: {x: 268.7866, y: -10.54, z: -96.67}
+  m_LocalPosition: {x: 255.66159, y: -10.54, z: -96.67}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -12877,7 +12877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287517571}
   m_LocalRotation: {x: -0, y: -0, z: 0.019342478, w: 0.99981296}
-  m_LocalPosition: {x: 273.13657, y: -8.9, z: -81.36}
+  m_LocalPosition: {x: 260.01157, y: -8.9, z: -81.36}
   m_LocalScale: {x: 2.6665194, y: 5.100821, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -13237,7 +13237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.29, y: 4.48}
+  m_AnchoredPosition: {x: 34.87, y: 4.75}
   m_SizeDelta: {x: 2.676, y: 0.514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303456261
@@ -13279,7 +13279,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Is it <color=yellow>morning</color>or <color=blue>dusk</color>?
+  m_text: The <color=yellow>sun</color> reflects off the <color=blue>lake</color>
+    in the distance
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 90efd48478128405886ca24cf23dd00a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 90efd48478128405886ca24cf23dd00a, type: 2}
@@ -13348,10 +13349,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -0.035432816, w: 0.0551126}
   m_textInfo:
     textComponent: {fileID: 303456262}
-    characterCount: 21
+    characterCount: 45
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 8
+    wordCount: 9
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -16354,7 +16355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430715617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2597938, y: 0, z: 0}
+  m_LocalPosition: {x: 0.89229375, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 394859367}
@@ -18446,7 +18447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501227588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 279.63657, y: -6.05, z: -71.37}
+  m_LocalPosition: {x: 266.51157, y: -6.05, z: -71.37}
   m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -24276,7 +24277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799151550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.720276, y: 0.26, z: 0}
+  m_LocalPosition: {x: 66.095276, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1953681806}
@@ -24328,7 +24329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800801713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 265.5866, y: -6.6, z: -78.17}
+  m_LocalPosition: {x: 252.46161, y: -6.6, z: -78.17}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -31884,7 +31885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212123626}
   m_LocalRotation: {x: -0, y: -0, z: 0.019342478, w: 0.99981296}
-  m_LocalPosition: {x: 259.7666, y: -6.77, z: -74.86}
+  m_LocalPosition: {x: 246.6416, y: -6.77, z: -74.86}
   m_LocalScale: {x: 5.531883, y: 5.10082, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -43753,7 +43754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A Strange Place
+  m_text: The Lake
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41dd937ea7c624635aa5b9ebc056443f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 41dd937ea7c624635aa5b9ebc056443f, type: 2}
@@ -43822,10 +43823,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1773364792}
-    characterCount: 15
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -44126,7 +44127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102.53, y: -11.44}
+  m_AnchoredPosition: {x: 102.51, y: -11.44}
   m_SizeDelta: {x: 2.676, y: 0.514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779096963
@@ -44162,8 +44163,8 @@ MonoBehaviour:
   FadeInTime: 2
   FadeOutTime: 4
   FollowTime: 0
-  EnlargeTime: 5
-  EnlargeSize: 5
+  EnlargeTime: 4
+  EnlargeSize: 2
   ShrinkTime: 0
   ShrinkSize: 0
   StopTrigger: {fileID: 0}
@@ -44185,7 +44186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Something's down there!
+  m_text: Something's down there...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec74de0c37aee4bc4afa4e7a1f4e2ce0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: ec74de0c37aee4bc4afa4e7a1f4e2ce0, type: 2}
@@ -44194,8 +44195,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -44251,10 +44252,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.035432816, w: 0.0551126}
+  m_margin: {x: 0, y: 0, z: -7.053293, w: -2.392479}
   m_textInfo:
     textComponent: {fileID: 1779096966}
-    characterCount: 23
+    characterCount: 25
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -44520,7 +44521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796144972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.65532, y: 0, z: 49.6}
+  m_LocalPosition: {x: 46.03032, y: 0, z: 49.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 939101758}
@@ -46817,7 +46818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931549872}
   m_LocalRotation: {x: -0, y: -0, z: 0.06704112, w: 0.9977502}
-  m_LocalPosition: {x: 268.0366, y: -7, z: -72.8}
+  m_LocalPosition: {x: 254.91159, y: -7, z: -72.8}
   m_LocalScale: {x: 3.9503567, y: 5.10082, z: 1}
   m_Children: []
   m_Father: {fileID: 106316463}
@@ -47583,7 +47584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1959090388
 RectTransform:
   m_ObjectHideFlags: 0
