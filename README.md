@@ -34,7 +34,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface
 
-Each scene within our game have similar/identical UI components to give the player a sense of familiarity throughout the game. The majority of text are used with TextMeshPro.
+Steven: Each scene within our game have similar/identical UI components to give the player a sense of familiarity throughout the game. The majority of text are used with TextMeshPro.
 * Menu: The menu is very simplistic with only a “Play”, “Options” and “Exit” button focus we carry throughout our whole game is design and functionality. Using panels, buttons, and images, we create a very simple yet pleasant to look at menu. The incorporation of music ties in with the tone of our story and game, sad, yet beautiful. 
 Art: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fragmented%20Memories/Assets/Artwork%20and%20Game%20Assets/Title%20Screen.jpg) and Music: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fragmented%20Memories/Assets/Music/Sadness%20and%20Sorrow%20-%20Naruto%20%5BPiano%20Tutorial%5D%20(Synthesia).mp3). 
 Using UnityEngine.SceneManagement; we are able to go to the next scene on play. Main Menu Script here: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fragmented%20Memories/Assets/Scripts/MainMenu.cs)
@@ -50,9 +50,9 @@ HealthScript: (https://github.com/istevenful/Fragmented-Memories/blob/master/Fra
  
 ## Movement/Physics
 
-We impletmented a classic platformer movement/physics as the base for out game. On top of that we impletementd ADSR for horizontial movements. Jumping is where we spend the most focus on, since it ties into combat and platformer the most. We designed 3 types of jumping: normal jump, air jump and forgiving jump. Normal jump is when a player is grounded and jumps. Air jump is the ability to jump in air once per takeoff (jumpForce is smaller then normal jump). Forgiving jump is when for when users pressed jump just few frames before the charater grounded and this logic will rememeber that user did press jump and jump for them when character grounded, ie the forgivness. (Note: Air jump and forgiving jump are commented out in this version because there are odd chances it creates a super jump and shot player out into the sky. To active it please uncomment the code in `PlayerMovement.cs`.)
+Ethan: We impletmented a classic platformer movement/physics as the base for out game. On top of that we impletementd ADSR for horizontial movements. Jumping is where we spend the most focus on, since it ties into combat and platformer the most. We designed 3 types of jumping: normal jump, air jump and forgiving jump. Normal jump is when a player is grounded and jumps. Air jump is the ability to jump in air once per takeoff (jumpForce is smaller then normal jump). Forgiving jump is when for when users pressed jump just few frames before the charater grounded and this logic will rememeber that user did press jump and jump for them when character grounded, ie the forgivness. (Note: Air jump and forgiving jump are commented out in this version because there are odd chances it creates a super jump and shot player out into the sky. To active it please uncomment the code in `PlayerMovement.cs`.)
 
-AI - Used basic unity physics to move enemies around from different points depending on the location of the player. https://github.com/istevenful/Fragmented-Memories/blob/eefff8d5ea2d6d890ef04c4a5acc9434ea1d12b1/Fragmented%20Memories/Assets/Scripts/EnemyScripts/EnemyAI.cs#L58
+Travis: AI - Used basic unity physics to move enemies around from different points depending on the location of the player. https://github.com/istevenful/Fragmented-Memories/blob/eefff8d5ea2d6d890ef04c4a5acc9434ea1d12b1/Fragmented%20Memories/Assets/Scripts/EnemyScripts/EnemyAI.cs#L58
 We were initially going to create a more involved ai system, but after spending too much time trying to implement a path finding algorithm and flying enemy, in the interest of time that had to be scrapped.
 
 ## Animation and Visuals
@@ -65,14 +65,12 @@ Animation:
 
 ## Input
 
-Defualt: arrowkeys/A or D to move, space to jump and leftAlt to attack. All inputs are taken from the keybroad. 
+Ethan: Defualt: arrowkeys/A or D to move, space to jump and leftAlt to attack. All inputs are taken from the keybroad. 
 
-
- 
 ## Game Logic
 
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
-This game was broken down into 4 scenes, each with their individual story that built towards the overall story. Scenes were loaded using a scene loading script: https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/LoadNewScene.cs#L1
+Traivs/Steven: This game was broken down into 4 scenes, each with their individual story that built towards the overall story. Scenes were loaded using a scene loading script: https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/LoadNewScene.cs#L1
 Data wasn't carried over in between scenes and each scene was carefully crafted by the animation and visuals team members.
 ADSR was used for the movements https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/PlayerMovement.cs#L72
 Player location was tracked using the Vector2.Distance function to determine how enemies, music, and text should respond.
@@ -88,7 +86,7 @@ https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5
 
 ## Audio
 
-Audio was setup in a zone system. When inside the zone, audio would fade in or out using lerp. The zones were placed in a way to enhance player experience for when other sounds would need to be heard such as leaves crunching or when silence was used to build tension. https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/AudioTrigger.cs#L37
+Travis: Audio was setup in a zone system. When inside the zone, audio would fade in or out using lerp. The zones were placed in a way to enhance player experience for when other sounds would need to be heard such as leaves crunching or when silence was used to build tension. https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/AudioTrigger.cs#L37
 
 * Audio was obtained from the following sources:
 https://www.salamisound.com/info1
@@ -101,16 +99,16 @@ We went for a more serious game where each level had a slightly different tone t
 
 https://drive.google.com/open?id=1JJS6BolwAGsbFIvSvnAEqOuuN1g_6zDiFRZ7rwxnHdk
 
-This role was splited by all the team memebers since we are down one person. Each team memeber had tested the game intensivly in all phases of development, here are the key foundings:
+All: This role was splited by all the team memebers since we are down one person. Each team memeber had tested the game intensivly in all phases of development, here are the key foundings:
 
 * Feedbacks on different type of movements tested during development: Eventhough the player is a human, however, the game is set in a deam land, therefore, a more light, fast-reacting and fluid movement is best fitted for the character. 
 * Feadbacks on combat: First, we found that hit-boxes are a good method to adjust the difficulting of combat. Cooldowns and attack and gaps between when the character can takes another damage is also something to think about when setting the numbers. 
 
 ## Narrative Design
 
-As a narrative driven game, it was important that the narrative system felt interesting and that the narrative itself was intriguing. This meant creating custom scripts to give the words themselves juice and to take in feedback about where the narrative was unclear and how the gameplay elements did or didn’t add to the overall narrative experience. The narrative was revised multiple times based on the feedback of others.https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/TextTrigger.cs#L55
+Travis/Steven: As a narrative driven game, it was important that the narrative system felt interesting and that the narrative itself was intriguing. This meant creating custom scripts to give the words themselves juice and to take in feedback about where the narrative was unclear and how the gameplay elements did or didn’t add to the overall narrative experience. The narrative was revised multiple times based on the feedback of others.https://github.com/istevenful/Fragmented-Memories/blob/25df54de461d46f4cc5bc36c5a9c3ca9c02af4c9/Fragmented%20Memories/Assets/Scripts/StoryText/TextTrigger.cs#L55
 
-Each level was meant to have it’s own tone and story, while still building towards the overall theme and narrative. Large words were used at the beginning of new levels to try and create tone and build the story and the characters changing responses to the world around him created a sense of progression within each level. Colors were used to highlight important words and the duality between certain elements. Text would get larger when the words being said were important to the story. Text would shake to give the player a sense of uncertainty.
+Travis: Each level was meant to have it’s own tone and story, while still building towards the overall theme and narrative. Large words were used at the beginning of new levels to try and create tone and build the story and the characters changing responses to the world around him created a sense of progression within each level. Colors were used to highlight important words and the duality between certain elements. Text would get larger when the words being said were important to the story. Text would shake to give the player a sense of uncertainty.
 
 ## Press Kit and Trailer
 * Press Kit materials: Raw gameplay footage
@@ -119,6 +117,7 @@ Each level was meant to have it’s own tone and story, while still building tow
 
 ## Game Feel
 
+All:
 * Movement: tested different ADSR curves to find the best movement type for the main character.
 * Hit-box: adjust the size of hit-boxes, size of hit-box is directly realating to the difficultiy of combat.
 * Jumping: jumpforce has tested with a few different numbers, the ability of air jump is to make players has bette rcomtrol over the character and make moving arround platforms easier. Forgiving jump is to aviod the situation that player might think the game is "broken" when the jump has not executed when pressed too eariler. (Note: this idea came from the GDC talk by developers from Celeste.)
