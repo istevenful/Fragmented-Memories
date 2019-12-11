@@ -54,7 +54,8 @@ We impletmented a classic platformer movement/physics as the base for out game. 
 
  
 ## Animation and Visuals
-
+Map visuals: Each scene in game is a parallex map, which is a map composed of different images with different Z coordinates. When the camera moves, the player will be able to see some degree of depth illusion. There are also particle effects and lighting throughout the maps to make the map alived and realistic.
+Animation:
 
 
 **Describe how your work intersects with game feel, graphic design, and world-building.**
@@ -97,9 +98,9 @@ This role was splited by all the team memebers since we are down one person. Eac
 
 
 ## Press Kit and Trailer
-* Press Kit materials:
+* Press Kit materials: Raw gameplay footage
 * Link to trailer: [Fragmented Memories: A Journey Through Light and Dark](https://www.youtube.com/watch?v=dIQyp2skE5w&feature=youtu.be)
-* 
+* Software Used: Adobe After Effects 2020
 
 ## Game Feel
 
