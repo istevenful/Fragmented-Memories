@@ -57,7 +57,7 @@ We were initially going to create a more involved ai system, but after spending 
 
 ## Animation and Visuals
 Map visuals: Each scene in game is a parallex map, which is a map composed of different images with different Z coordinates. When the camera moves, the player will be able to see some degree of depth illusion. There are also particle effects and lighting throughout the maps to make the map alived and realistic.
-** Assets and Animation: 
+# Assets and Animation: 
 * Character: https://assetstore.unity.com/packages/2d/characters/2d-character-bolchie-114179
 * Camara: https://assetstore.unity.com/packages/essentials/cinemachine-79898
 * Scene 1: https://assetstore.unity.com/packages/2d/environments/free-asset-2d-handcrafted-art-117049
